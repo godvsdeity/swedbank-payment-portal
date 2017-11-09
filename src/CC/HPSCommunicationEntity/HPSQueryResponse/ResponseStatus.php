@@ -67,9 +67,9 @@ class ResponseStatus extends AbstractStatus
     public function deserialize(XmlDeserializationVisitor $visitor, $data, Context $context)
     {
         if (array_key_exists((string)$data, self::TYPE_MAP)) {
-            $this->assignId(self::TYPE_MAP[(string)$data]);
+            $this->assignId(self::TYPE_MAP[(string)$data], true);
         } else {
-            $this->assignId((int)$data);
+            $this->assignId((int)$data, true);
         }
     }
 
